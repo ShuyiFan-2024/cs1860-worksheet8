@@ -1,0 +1,11 @@
+CHIP DisplayCounter201871067{
+IN inc, reset;
+OUT a,b,c,d,e,f,g;
+PARTS:
+    Inc16(in=apple,out=orange);
+    Mux16(a=apple,b=orange,sel=inc,out=burry);
+    Mux16(a=burry,b=false,sel=reset,out=lily);
+    Register(in=lily,load=true,out=apple);
+    Splitter(in=apple, out0=var1, out1=var2,out2=var3,out3=var4);
+    Decoder201840925(A=var4,B=var3,C=var2,D=var1, a=a, b=b,c=c, d=d,e=e, f=f, g=g);
+}
