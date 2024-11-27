@@ -1,4 +1,4 @@
-CHIP splitter{
+CHIP Splitter{
     IN in[16];
     OUT out0,out1,out2,out3;
     PARTS :
